@@ -1,0 +1,10 @@
+{
+  "name": "vuelos-a-cursos",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "packageManager": "pnpm@11.19.0",
+  "scripts": { "dev": "vite", "build": "vite build", "preview": "vite preview" },
+  "dependencies": { "@supabase/supabase-js": "^2.49.1" },
+  "devDependencies": { "vite": "^6.2.2" }
+}
