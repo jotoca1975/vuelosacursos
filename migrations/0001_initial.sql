@@ -1,5 +1,0 @@
-CREATE TABLE IF NOT EXISTS centres (id TEXT PRIMARY KEY, name TEXT NOT NULL, country TEXT NOT NULL, search_name TEXT NOT NULL, source_url TEXT, updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP, UNIQUE(name,country));
-CREATE INDEX IF NOT EXISTS centres_search_name ON centres(search_name);
-CREATE TABLE IF NOT EXISTS courses (id TEXT PRIMARY KEY, centre_id TEXT NOT NULL REFERENCES centres(id), course_type TEXT NOT NULL, start_date TEXT NOT NULL, end_date TEXT NOT NULL, created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP, UNIQUE(centre_id,course_type,start_date,end_date));
-CREATE TABLE IF NOT EXISTS viajes (id INTEGER PRIMARY KEY AUTOINCREMENT, course_id TEXT NOT NULL REFERENCES courses(id), nombre TEXT NOT NULL, apellidos TEXT, ciudad_salida TEXT, aeropuerto TEXT, llegada_centro TEXT, comentarios TEXT, consentimiento INTEGER NOT NULL DEFAULT 0, telefono TEXT, email TEXT, created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP, CHECK(consentimiento=1 OR (telefono IS NULL AND email IS NULL)));
-CREATE INDEX IF NOT EXISTS viajes_course_id ON viajes(course_id);
