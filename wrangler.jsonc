@@ -1,0 +1,9 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "vuelos-a-cursos",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-11-17",
+  "assets": { "directory": "./dist", "binding": "ASSETS", "run_worker_first": ["/api/*"] },
+  "triggers": { "crons": ["0 6 1 * *"] },
+  "d1_databases": [{ "binding": "DB", "database_name": "vuelos-a-cursos", "database_id": "38b88238-4e23-475f-83e7-3df439a51f4f", "migrations_dir": "migrations" }]
+}
